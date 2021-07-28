@@ -1,30 +1,96 @@
 <html>
+
 <head>
-    <title>supsm</title>
-    <style>
-        button.right
-        {
-            float: right;
-            margin-left: inherit;
-        }
+  <title>supsm</title>
+  <style>
+    button.right {
+      float: right;
+    }
 
-        button.left
-        {
-            float: left;
-            margin-right: inherit;
-        }
-    </style>
+    button.left {
+      float: left;
+    }
+  </style>
+  <!-- For material.io, please do not alter -->
+  <link href="https://unpkg.com/material-components-web@11.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@11.0.0/dist/material-components-web.min.js"></script>
+  <!-- Icon pack -->
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+  <!-- styling (for icons and such) -->
+  <link rel='stylesheet' href='/common.css'>
+  <!-- end material.io -->
+  <!-- additional UI styling -->
+  <style>
+    #main-content {
+      position: absolute;
+      top: 65px;
+    }
+  </style>
 </head>
+
 <body>
-    <button class="left" onclick="location.href='/'">Home</button>
-    <button class="left" onclick="location.href='/MCPPPP'">MCPPPP</button>
-    <button class="left" onclick="location.href='/donate'">Donate</button>
+  <!-- App bar and nav drawer (sidebar). DO NOT EDIT, unless you wish to make changes. Then please copy the changes into common.html and edit **ALL** pages for consistency. -->
+  <header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" style='color: rgba(255, 255, 255, 0.5)' aria-label="Home" id="navbarbtn" onclick="location.href='/'">home</button>
+        <button class='mdc-top-app-bar__action-item mdc-button' style='height: 64px' onclick="location.href='/MCPPPP/'">
+          <div class='mdc-button__ripple'></div>
+          <span class='mdc-button__label'>MCPPPP</span>
+        </button>
+        <button class='mdc-top-app-bar__action-item mdc-button' style='height: 64px' onclick="location.href='/donate.html'">
+          <div class='mdc-button__ripple'></div>
+          <span class='mdc-button__label'>Donate</span>
+        </button>
+      </section>
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="mdc-top-app-bar__action-item mdc-icon-button" onclick="window.open('https://github.com/supsm')">
+          <img src="res/img/gh.png" aria-label="GitHub" />
+          <div class='mdc-tooltip' role='tooltip' style=''>
+            <div class='mdc-tooltip__surface'>
+              GitHub
+            </div>
+          </div>
+        </button>
+        <button class='mdc-top-app-bar__action-item mdc-icon-button' onclick="window.open('https://discord.gg/waXJDswsaR')">
+          <img src='res/img/discrd.png' aria-label="Discord" style='width: 22px' />
+          <div class='mdc-tooltip' role='tooltip'>
+            <div class='mdc-tooltip__surface'>
+              Discord
+            </div>
+          </div>
+        </button>
+      </section>
+    </div>
+  </header>
+  <!-- end appbar -->
 
-    <button class="right" onclick="window.open('https://discord.gg/waXJDswsaR')">Discord</button>
-    <button class="right" onclick="window.open('https://github.com/supsm')">Github</button>
+  <!-- @supsm for future reference, do this to add a button: (you may copy template) [Remove all backslashes in comment tags]
+    <button class="[additional classes] mdc-button">
+      <div class='mdc-button__ripple'></div> <!-- allows for a ripple effect when clicking the button, aesthetics and optional. Use this on **main navbar** buttons for consistency. -\->
+      <span class='mdc-button__label'>Button Text</span>
+    </button>
+  -->
+  <br />
+  <!-- Place all text content inside div tags below. -->
+  <div class='mdc-typography' id='main-content'>
+    <p class='mdc-typography--body1'><strong>Welcome to my website!</strong> (Still WIP, obviously)</p>
+    <p class='mdc-typography--body1'>I don't know html, css, or javascript, so this website will take a while and look like garbage<br />Please join my discord server, it has some important info ig</p>
+  </div>
 
-    <br />
-    <p><strong>Welcome to my website!</strong> (Still WIP, obviously)</p>
-    <p>I don't know html, css, or javascript, so this website will take a while and look like garbage<br />Please join my discord server, it has some important info ig</p>
+
+  <!-- Scripts for UI functionality. Please don't touch. -->
+  <script>
+    // Tooltip functionality
+    document.querySelectorAll('.mdc-tooltip').forEach(e => {
+      e.addEventListener('mouseenter', () => {
+        e.style.display = 'block !important';
+      });
+      e.addEventListener('mouseleave', () => {
+        e.style.display = 'none !important';
+      })
+    });
+  </script>
 </body>
+
 </html>

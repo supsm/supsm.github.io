@@ -1,0 +1,8 @@
+/* Shared style sheets */
+/* .material-icons {
+  font-family: 'Material Icons';
+} */
+/* Variables */
+:root {
+  --mdc-theme-primary: #0badde;
+}
